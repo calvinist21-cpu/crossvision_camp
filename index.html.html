@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 크로스 비전 캠프</title>
+    
+    <!-- Tailwind CSS (스타일) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (아이콘) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        
+        body {
+            font-family: 'Pretendard', sans-serif;
+        }
+
+        /* 커스텀 애니메이션 스타일 */
+        @keyframes wave-anchor {
+            0%, 100% { transform: rotate(-15deg) scale(1); }
+            50% { transform: rotate(15deg) scale(1.15); }
+        }
+        @keyframes ripple-blue {
+            0% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.5); }
+            100% { box-shadow: 0 0 0 20px rgba(14, 165, 233, 0); }
+        }
+        @keyframes ripple-white {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            100% { box-shadow: 0 0 0 35px rgba(255, 255, 255, 0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .animate-wave-anchor { animation: wave-anchor 2.5s ease-in-out infinite; }
+        .animate-ripple-blue { animation: ripple-blue 1.5s linear infinite; border-radius: 50%; }
+        .animate-ripple-white { animation: ripple-white 2s linear infinite; border-radius: 50%; }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-float-delayed { animation: float 5s ease-in-out 2s infinite; }
+    </style>
+</head>
+<body class="min-h-screen text-gray-800 overflow-x-hidden relative bg-fixed bg-center bg-cover" style="background-image: url('https://i.ifh.cc/MhFgSG.jpg')">
+    
+    <!-- 가독성을 위한 반투명 오버레이 -->
+    <div class="fixed inset-0 bg-blue-50/60 backdrop-blur-[2px] pointer-events-none z-0"></div>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-b from-blue-800/85 via-blue-600/85 to-cyan-400/85 backdrop-blur-sm text-white overflow-hidden pt-16 pb-24 md:pb-32 z-10">
+        <!-- Dynamic Background Elements -->
+        <i data-lucide="cloud" class="absolute top-10 left-4 md:left-20 text-white/30 w-16 h-16 md:w-24 md:h-24 animate-float fill-current"></i>
+        <i data-lucide="cloud" class="absolute top-24 right-4 md:right-32 text-white/30 w-12 h-12 md:w-20 md:h-20 animate-float-delayed fill-current"></i>
+        <i data-lucide="star" class="absolute top-1/3 left-1/4 text-yellow-300/60 w-8 h-8 animate-pulse fill-current"></i>
+        <i data-lucide="star" class="absolute bottom-1/4 right-1/4 text-white/50 w-6 h-6 animate-pulse fill-current"></i>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
+            <div class="bg-white/20 backdrop-blur-md rounded-full px-5 py-2 mb-6 border border-white/40 shadow-sm inline-block">
+                <p class="text-white font-bold tracking-[0.2em] text-xs md:text-sm uppercase">
+                    Cross Vision Camp 2026
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-8 w-full">
+                <h1 class="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight drop-shadow-xl whitespace-nowrap">
+                    2026 크로스
+                </h1>
+                <div class="flex items-center gap-2 md:gap-4 whitespace-nowrap">
+                    <h1 class="text-5xl sm:text-6xl md:text-8xl font-black tracking-tight text-yellow-300 drop-shadow-xl">
+                        비전 캠프
+                    </h1>
+                    <!-- 메인 히어로 닻 애니메이션 -->
+                    <div class="relative flex items-center justify-center p-2 rounded-full animate-ripple-white">
+                        <i data-lucide="anchor" stroke-width="2.5" class="animate-wave-anchor w-12 h-12 md:w-20 md:h-20 text-yellow-300 drop-shadow-lg"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-blue-900/40 to-cyan-900/40 backdrop-blur-md rounded-3xl px-8 py-4 mt-2 border border-white/20 shadow-xl transform transition hover:scale-105">
+                <h2 class="text-xl md:text-3xl font-extrabold flex items-center justify-center gap-3">
+                    <i data-lucide="ship" class="w-8 h-8 text-cyan-300 animate-float"></i>
+                    <span>예수님과 함께 하는 <span class="text-yellow-300 bg-black/10 px-3 py-1 rounded-xl">믿음의 항해</span></span>
+                </h2>
+            </div>
+        </div>
+
+        <!-- SVG Wave Divider for a smooth transition -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-0 transform translate-y-[1px]">
+            <svg class="relative block w-full h-[50px] md:h-[80px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,111.41,192.74,84.4,233.15,66.86,277.2,63.15,321.39,56.44Z" fill="rgba(255, 255, 255, 0.4)"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-12 relative z-20">
+        
+        <!-- Poster Image Section -->
+        <section class="mb-20 flex justify-center px-2">
+            <div class="relative group rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white transform transition-transform duration-500 hover:-translate-y-2 bg-white max-w-2xl w-full">
+                <!-- 호버 시 살짝 밝아지는 효과 -->
+                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-10 pointer-events-none"></div>
+                <img 
+                    src="https://i.ifh.cc/bLdwwc.jpg" 
+                    alt="2026 크로스 비전 캠프 포스터" 
+                    class="w-full h-auto object-cover relative z-0"
+                    onerror="this.onerror=null; this.src='https://via.placeholder.com/800x1130?text=Poster+Image+Not+Found';"
+                />
+            </div>
+        </section>
+
+        <!-- Information Grid -->
+        <section class="mb-20">
+            <div class="text-center mb-12 flex flex-col items-center">
+                <div class="inline-flex items-center justify-center gap-2 bg-blue-100 text-blue-700 px-6 py-2 rounded-full mb-3 shadow-sm font-bold">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-yellow-500"></i>
+                    <span>캠프 안내</span>
+                    <i data-lucide="sparkles" class="w-5 h-5 text-yellow-500"></i>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-black text-blue-900">
+                    신나는 항해를 준비해요!
+                </h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Info Item 1 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-pink-100 text-pink-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <i data-lucide="calendar-days" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">일시</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">2026년 8월 3일(월) ~ 8월 5일(수)<br>(2박 3일)</p>
+                    </div>
+                </div>
+                <!-- Info Item 2 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-green-100 text-green-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <i data-lucide="map-pin" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">장소</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">고흥 엘림수양관<br>(전남 고흥군 과역면 고흥로 3182-10)</p>
+                    </div>
+                </div>
+                <!-- Info Item 3 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-cyan-100 text-cyan-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <div class="relative flex items-center justify-center p-2 rounded-full animate-ripple-blue">
+                            <i data-lucide="anchor" class="animate-wave-anchor w-8 h-8 text-cyan-500" stroke-width="2.5"></i>
+                        </div>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">주제</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">예수님과 함께 하는<br>믿음의 항해</p>
+                    </div>
+                </div>
+                <!-- Info Item 4 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-purple-100 text-purple-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <i data-lucide="book-open" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">주제성구</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">'믿음의 주요 또 온전하게 하시는 이인 예수를 바라보자' (히 12:2)</p>
+                    </div>
+                </div>
+                <!-- Info Item 5 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-orange-100 text-orange-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <i data-lucide="users" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">대상</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">유치부, 초등부, 교사<br>(선착순 300명)</p>
+                    </div>
+                </div>
+                <!-- Info Item 6 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-yellow-100 text-yellow-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <i data-lucide="banknote" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">참가비</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">1인당 60,000원<br>(학생, 교사 모두를 포함한 금액)</p>
+                    </div>
+                </div>
+                <!-- Info Item 7 -->
+                <div class="bg-white rounded-3xl p-6 shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border-2 border-white hover:border-blue-100 flex items-start gap-4 relative overflow-hidden group">
+                    <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-sky-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-500 z-0"></div>
+                    <div class="relative z-10 bg-blue-100 text-blue-600 p-3 rounded-2xl shadow-sm shrink-0">
+                        <i data-lucide="phone" class="w-8 h-8"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h4 class="font-extrabold text-xl text-blue-950 mb-2">신청문의</h4>
+                        <p class="text-gray-600 whitespace-pre-line leading-relaxed font-medium">오경환 목사<br>(010-4656-2251)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timetable Section -->
+        <section class="bg-white rounded-[2rem] shadow-xl overflow-hidden border-4 border-blue-50">
+            <div class="bg-gradient-to-r from-blue-700 to-cyan-500 text-white text-center py-8 relative">
+                <h3 class="text-3xl md:text-4xl font-black flex items-center justify-center gap-3 drop-shadow-md">
+                    <i data-lucide="calendar-days" class="w-8 h-8 md:w-10 md:h-10 text-yellow-300"></i>
+                    <span>타임 테이블</span>
+                </h3>
+                <div class="absolute right-6 top-1/2 -translate-y-1/2 opacity-20 hidden md:block">
+                    <i data-lucide="anchor" class="w-16 h-16 transform rotate-12"></i>
+                </div>
+            </div>
+
+            <div class="p-4 md:p-8 bg-sky-50/50">
+                <!-- Bubbly Tabs -->
+                <div class="flex flex-col md:flex-row gap-3 mb-8" id="tab-buttons">
+                    <button data-target="day1" class="tab-btn flex-1 py-4 px-6 rounded-2xl text-center font-extrabold text-lg md:text-xl transition-all duration-300 bg-blue-600 text-white shadow-lg shadow-blue-200 transform md:-translate-y-1 scale-[1.02]">
+                        8월 3일(월)
+                    </button>
+                    <button data-target="day2" class="tab-btn flex-1 py-4 px-6 rounded-2xl text-center font-extrabold text-lg md:text-xl transition-all duration-300 bg-white text-blue-800 shadow-sm border border-blue-100 hover:bg-blue-50 hover:shadow-md">
+                        8월 4일(화)
+                    </button>
+                    <button data-target="day3" class="tab-btn flex-1 py-4 px-6 rounded-2xl text-center font-extrabold text-lg md:text-xl transition-all duration-300 bg-white text-blue-800 shadow-sm border border-blue-100 hover:bg-blue-50 hover:shadow-md">
+                        8월 5일(수)
+                    </button>
+                </div>
+
+                <!-- Schedule Content -->
+                <div class="bg-white rounded-3xl p-4 md:p-8 shadow-sm border border-gray-100">
+                    <div class="hidden md:grid grid-cols-4 gap-6 mb-4 px-4 text-sm font-bold text-gray-400 uppercase tracking-wider border-b-2 border-gray-100 pb-3">
+                        <div class="col-span-1">시간</div>
+                        <div class="col-span-3">프로그램</div>
+                    </div>
+                    
+                    <!-- Day 1 Content -->
+                    <div id="day1" class="tab-content space-y-4">
+                        <!-- 스케줄 아이템들 -->
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">09:30~10:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">접수, 숙소 확인</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">10:30~11:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">캠프 찬양</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">11:00~12:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div>
+                                    <h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">개회 예배, OT (김성경 목사)</h4>
+                                    <p class="text-sm font-medium text-gray-500 mt-1">MIC (한동대 힙합댄스)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">12:00~13:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">점심 식사</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">13:30~14:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">공과 I</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">14:30~16:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="droplets" class="w-5 h-5 text-cyan-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">물놀이</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">16:00~17:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="trophy" class="w-5 h-5 text-yellow-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">도전 기네스~ I</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">17:00~18:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">휴식</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">18:00~19:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">저녁 식사</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">19:00~20:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="users" class="w-5 h-5 text-orange-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">공동체 훈련 I</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">20:00~20:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">캠프 찬양</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">20:30~21:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">저녁 집회 I (이형구 목사)</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">21:30~22:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">결단 기도회</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">22:00~23:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="moon" class="w-5 h-5 text-indigo-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">취침</h4></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 Content -->
+                    <div id="day2" class="tab-content space-y-4 hidden">
+                        <!-- 스케줄 아이템들 -->
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">07:30~08:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="sun" class="w-5 h-5 text-orange-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">기상</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">08:00~09:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">아침 식사</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">09:00~09:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">캠프 찬양</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">09:30~10:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">공과 II</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">10:30~11:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">캠프 찬양</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">11:00~12:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">달꿈 무대</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">12:00~13:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">점심 식사</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">13:00~13:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">캠프 찬양</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">13:30~14:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">공과 III</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">14:30~16:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="droplets" class="w-5 h-5 text-cyan-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">물놀이</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">16:00~17:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="trophy" class="w-5 h-5 text-yellow-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">도전 기네스~ II</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">17:00~18:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">휴식</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">18:00~19:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">저녁 식사</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">19:00~20:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="users" class="w-5 h-5 text-orange-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">공동체 훈련 II</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">20:00~20:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="music" class="w-5 h-5 text-pink-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">캠프 찬양</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">20:30~21:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">저녁 집회 II (김성일 목사)</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">21:30~22:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="users" class="w-5 h-5 text-blue-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">결단 기도회</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">22:00~23:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="moon" class="w-5 h-5 text-indigo-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">취침</h4></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 Content -->
+                    <div id="day3" class="tab-content space-y-4 hidden">
+                        <!-- 스케줄 아이템들 -->
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">07:30~08:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="sun" class="w-5 h-5 text-orange-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">기상</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">08:00~09:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="coffee" class="w-5 h-5 text-amber-600"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">아침 식사</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">09:30~10:30</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="trophy" class="w-5 h-5 text-yellow-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">성경 골든벨 (고승훈 목사)</h4></div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row md:items-center bg-gray-50/50 rounded-2xl p-4 border border-transparent hover:border-blue-200 hover:bg-blue-50 hover:shadow-md transition-all duration-300 group">
+                            <div class="md:w-1/4 mb-3 md:mb-0"><span class="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-sm md:text-base shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">11:00~12:00</span></div>
+                            <div class="md:w-3/4 flex items-start md:items-center gap-4 pl-2 md:pl-0">
+                                <div class="bg-white p-2.5 rounded-full shadow-sm border border-gray-100 group-hover:scale-110 transition-transform"><i data-lucide="book-open" class="w-5 h-5 text-purple-500"></i></div>
+                                <div><h4 class="font-extrabold text-gray-800 text-lg md:text-xl group-hover:text-blue-900 transition-colors">폐회 예배 (김종두 목사)</h4></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="mt-20 flex flex-col items-center">
+            <div class="text-center mb-10 flex flex-col items-center">
+                <div class="inline-flex items-center justify-center gap-2 bg-blue-100 text-blue-700 px-6 py-2 rounded-full mb-3 shadow-sm font-bold">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-yellow-500"></i>
+                    <span>캠프 미리보기</span>
+                    <i data-lucide="sparkles" class="w-5 h-5 text-yellow-500"></i>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-black text-blue-900 drop-shadow-sm">
+                    은혜로운 캠프 이야기
+                </h3>
+            </div>
+            
+            <a 
+                href="https://www.youtube.com/watch?v=RswkHMNQlVg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="relative w-full max-w-4xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-black aspect-video group block"
+            >
+                <img
+                    src="https://img.youtube.com/vi/RswkHMNQlVg/hqdefault.jpg"
+                    alt="2024 크로스 비전청소년 캠프"
+                    class="w-full h-full object-cover opacity-80 group-hover:opacity-50 transition-opacity duration-300"
+                />
+                <div class="absolute inset-0 flex flex-col items-center justify-center p-4">
+                    <i data-lucide="play-circle" class="w-16 h-16 md:w-20 md:h-20 text-yellow-400 drop-shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h4 class="text-2xl md:text-4xl font-black text-white text-center drop-shadow-xl bg-black/40 px-6 py-3 rounded-2xl backdrop-blur-sm border border-white/20">
+                        2024 크로스 비전청소년 캠프
+                    </h4>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-blue-900/95 to-blue-950/95 backdrop-blur-md text-white text-center py-16 px-4 mt-12 relative overflow-hidden z-20">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500"></div>
+        
+        <div class="max-w-3xl mx-auto flex flex-col items-center relative z-10">
+            <div class="flex gap-4 mb-6">
+                <div class="relative flex items-center justify-center p-2 rounded-full animate-ripple-blue">
+                    <i data-lucide="anchor" class="animate-wave-anchor w-10 h-10 text-cyan-300" stroke-width="2.5"></i>
+                </div>
+                <i data-lucide="ship" class="w-12 h-12 text-yellow-400 animate-float fill-current"></i>
+                <div class="relative flex items-center justify-center p-2 rounded-full animate-ripple-blue">
+                    <i data-lucide="anchor" class="animate-wave-anchor w-10 h-10 text-cyan-300" stroke-width="2.5"></i>
+                </div>
+            </div>
+            
+            <h2 class="text-2xl md:text-4xl font-black mb-4 tracking-tight drop-shadow-md">
+                함께 항해해요! <br class="md:hidden" /> 
+                <span class="text-cyan-300">예수님이 우리의 소망</span>입니다!
+            </h2>
+            <p class="text-blue-300 mt-6 text-sm font-medium">
+                © 2026 CROSS VISION CAMP. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 스크립트 처리 (아이콘 렌더링, 탭 기능) -->
+    <script>
+        // 1. Lucide 아이콘 렌더링 시작
+        lucide.createIcons();
+
+        // 2. 타임테이블 탭 기능 구현
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 모든 버튼 스타일 초기화
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white', 'shadow-lg', 'shadow-blue-200', 'md:-translate-y-1', 'scale-[1.02]');
+                    btn.classList.add('bg-white', 'text-blue-800', 'shadow-sm', 'border-blue-100', 'hover:bg-blue-50', 'hover:shadow-md');
+                });
+                
+                // 클릭된 버튼 스타일 적용
+                button.classList.add('bg-blue-600', 'text-white', 'shadow-lg', 'shadow-blue-200', 'md:-translate-y-1', 'scale-[1.02]');
+                button.classList.remove('bg-white', 'text-blue-800', 'shadow-sm', 'border-blue-100', 'hover:bg-blue-50', 'hover:shadow-md');
+
+                // 모든 콘텐츠 숨기기
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // 타겟 콘텐츠 보이기
+                const targetId = button.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
